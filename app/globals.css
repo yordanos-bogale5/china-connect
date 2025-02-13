@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+
+  /* Light mode colors */
+  --light-bg: #ffffff;
+  --light-sidebar: #f4f4f5;
+  --light-text: #1a1a1a;
+  --light-border: #e5e7eb;
+
+  /* Dark mode colors */
+  --dark-bg: #0e1621;
+  --dark-sidebar: #17212b;
+  --dark-text: #ffffff;
+  --dark-border: #202b36;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+}
+
+/* Base styles */
+body {
+  @apply transition-colors duration-200;
+}
+
+/* Light mode */
+body {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+/* Dark mode */
+.dark body {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* Sidebar */
+.sidebar {
+  @apply transition-colors duration-200;
+  background-color: var(--light-sidebar);
+}
+
+.dark .sidebar {
+  background-color: var(--dark-sidebar);
+}
+
+/* Chat window */
+.chat-window {
+  @apply transition-colors duration-200;
+  background-color: var(--light-bg);
+}
+
+.dark .chat-window {
+  background-color: var(--dark-bg);
+}
+
+/* Messages */
+.message {
+  @apply transition-colors duration-200;
+}
+
+.message.sent {
+  background-color: #2b5278;
+}
+
+.dark .message.sent {
+  background-color: #2b5278;
+}
+
+.message.received {
+  background-color: #f4f4f5;
+}
+
+.dark .message.received {
+  background-color: #182533;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply transition-colors duration-200;
+  background-color: #e5e7eb;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #232e3c;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #d1d5db;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #2b5278;
+}
+
+/* Input areas */
+.input-area {
+  @apply transition-colors duration-200;
+  background-color: var(--light-bg);
+  border-color: var(--light-border);
+}
+
+.dark .input-area {
+  background-color: var(--dark-bg);
+  border-color: var(--dark-border);
+}
+
+/* Transitions */
+.transition-theme {
+  @apply transition-colors duration-200;
+}
+
